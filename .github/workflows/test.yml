@@ -1,0 +1,14 @@
+on:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+name: release-please
+jobs:
+  release-please:
+    runs-on: [inviting-hermit]
+    steps:
+      - name: run
+        run: |
+          echo "Hello, world!"
